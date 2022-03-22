@@ -39,7 +39,7 @@ const configMeta = {
 };
 
 const state = {};
-const configFile = (!process.env.configFile? {}: require(process.env.configFile));
+const configFile = (!('./config/configFile')? {}: require('./config/configFile'));
 const configKeys = [];
 const missingConfigKeys = [];
 const config = Object.keys(configMeta)
