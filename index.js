@@ -29,13 +29,13 @@ const configDefault = {
 };
 
 const configMeta = {
-    domain: process.env.DOMAIN,
-    demo: process.env.DEMO,
-    bot: process.env.BOTUSERNAME,
-    secret: 'z7WnDUfuhtDCBjX54Ks5vB4SAdGmdzwRVlGQjWBt',
-    token: process.env.BOT_TOKEN,
-    admin: process.env.ADMIN_USERNAME,
-    hubRedis: process.env.REDISURL
+    domain: DOMAIN,
+    demo: DEMO,
+    bot: BOTUSERNAME,
+    secret: SECRET,
+    token: BOT_TOKEN,
+    admin: ADMIN_USERNAME,
+    huredis: REDISURL
 };
 
 const state = {};
