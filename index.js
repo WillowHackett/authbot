@@ -29,17 +29,17 @@ const configDefault = {
 };
 
 const configMeta = {
-    domain: DOMAIN,
-    demo: DEMO,
-    bot: BOTUSERNAME,
-    secret: SECRET,
-    token: BOT_TOKEN,
-    admin: ADMIN_USERNAME,
-    huredis: REDISURL
+    domain: process.env.DOMAIN,
+    demo: process.env.DEMO,
+    bot: process.env.BOTUSERNAME,
+    secret: 'z7WnDUfuhtDCBjX54Ks5vB4SAdGmdzwRVlGQjWBt',
+    token: process.env.BOT_TOKEN,
+    admin: process.env.ADMIN_USERNAME,
+    hubRedis: process.env.REDISURL
 };
 
 const state = {};
-const configFile = (!process.env.configFile? {}: require(process.env.configFile));
+const configFile = Object.keys(configMeta);
 const configKeys = [];
 const missingConfigKeys = [];
 const config = Object.keys(configMeta)
