@@ -1,5 +1,6 @@
 const assert = require('assert');
 const crypto = require('crypto');
+const fetch = require('cross-fetch');
 const fs = require('fs');
 const lodash = require('lodash');
 const Promise = require('bluebird');
