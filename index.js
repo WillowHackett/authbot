@@ -98,7 +98,7 @@ function printDockerHelp() {
     console.error([
         `${sp}docker run -t ${config.namespace}:test -d \\`,
         ...configKeys.map(key => {
-            return `${sp+sp}-e ${key}='${config[key]}' \\`;
+            return `${sp+sp}-e ${key}='${configMeta[key]}' \\`;
         }),
         ...missingConfigKeys.map(key => {
             const meta = configMeta[key];
