@@ -92,7 +92,7 @@ function printStartHelp() {
 function printDockerHelp() {
     console.error('\nTest Docker build:');
     console.error([
-        `${sp}docker build -t authbot:test git@github.com:evanx/authbot.git`
+        `${sp}docker build -t authbot:test git@github.com:dishapatel010/authbot.git`
     ].join('\n'));
     console.error('\nExample Docker run:');
     console.error([
