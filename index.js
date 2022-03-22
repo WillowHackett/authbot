@@ -13,7 +13,7 @@ const app = new Koa();
 const api = KoaRouter();
 
 const configDefault = {
-    port: 8080,
+    port: process.env.PORT,
     namespace: 'authbot',
     redisHost: '127.0.0.1',
     loginExpire: 30,
@@ -29,44 +29,13 @@ const configDefault = {
 };
 
 const configMeta = {
-    domain: {
-        description: 'HTTPS web domain to auth access',
-        example: 'authdemo.webserva.com'
-    },
-    demo: {
-        required: false,
-        description: 'Serve site pages for the demo',
-        example: true
-    },
-    bot: {
-        description: 'Telegram Bot name i.e. this authbot',
-        example: 'ExAuthDemoBot',
-        info: 'https://core.telegram.org/bots/api',
-        hint: 'https://telegram.me/BotFather'
-    },
-    secret: {
-        description: 'Telegram Bot secret',
-        example: 'z7WnDUfuhtDCBjX54Ks5vB4SAdGmdzwRVlGQjWBt',
-        info: 'https://core.telegram.org/bots/api#setwebhook',
-        hint: 'https://github.com/evanx/random-base56'
-    },
-    token: {
-        description: 'Telegram Bot token',
-        example: '243751977:AAH-WYXgsiZ8XqbzcqME7v6mUALxjktvrQc',
-        info: 'https://core.telegram.org/bots/api#authorizing-your-bot',
-        hint: 'https://telegram.me/BotFather'
-    },
-    admin: {
-        description: 'Authoritative Telegram username i.e. bootstrap admin user',
-        example: 'evanxsummers',
-        info: 'https://telegram.org'
-    },
-    hubRedis: {
-        required: false,
-        description: 'Remote hub for bot messages via Redis, especially for development',
-        example: 'redis://localhost:6333',
-        info: 'https://github.com/evanx/webhook-push'
-    }
+    domain: process.env.DOMAIN,
+    demo: process.env.DEMO,
+    bot: process.env.BOTUSERNAME,
+    secret: 'z7WnDUfuhtDCBjX54Ks5vB4SAdGmdzwRVlGQjWBt',
+    token: process.env.BOT_TOKEN,
+    admin: process.env.ADMIN_USERNAME,
+    hubRedis: process.env.REDISURL
 };
 
 const state = {};
